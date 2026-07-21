@@ -22,7 +22,7 @@
         
         FastAPI and LangChain both heavily use type hints. Learn how to define data models with Pydantic BaseModel — this is a real job skill.
         
-    - [ ]  **Call the OpenAI / Anthropic API directly (no LangChain)**
+    - [x]  **Call the OpenAI / Anthropic API directly (no LangChain)**
         
         Using the raw API first teaches you what LangChain is actually abstracting. Build a simple chat loop, pass message history, handle streaming responses.
         
