@@ -4,12 +4,29 @@
 
 from google import genai
 from dotenv import load_dotenv
+import asyncio
 
 load_dotenv()
 
 client = genai.Client()
 
 chat = client.chats.create(model="gemini-3.1-flash-lite")
+
+def chatting(user_input: str):
+    response = chat.send_message(user_input)
+
+    print("AI: ", response.text)
+
+while True:
+    query = input("USER: ").strip() # .strip() removes the extra white spaces from both ends
+
+    if not query:
+        continue
+
+    if query == "quit" or query == "bye":
+        break
+
+    chatting(query)
 
 # query1 = "what color are apples generally??"
 # print("USER => ", query1)
@@ -23,20 +40,26 @@ chat = client.chats.create(model="gemini-3.1-flash-lite")
 # response2 = chat.send_message(query2)
 # print("AI => ", response2.text)
 
-def chatting(user_input: str):
-    response = chat.send_message(user_input)
+# ----------------------------------------------
 
-    print("AI: ", response.text)
+# async def chatting(user_input: str):
+#     response = await chat.send_message(user_input)
 
-while True:
-    query = input("USER: ").strip() # .strip() removes the extra white spaces from both ends
+#     print("AI: ", response)
 
-    if not query:
-        continue
+# async def main():
+#     while True:
+#         query = input("USER: ").strip() # .strip() removes the extra white spaces from both ends
 
-    if query == "quit" or "bye":
-        break
+#         if not query:
+#             continue
 
-    chatting(query)
+#         if query == "quit" or query == "bye":
+#             break
+
+#         chat = chatting(query)
+
+#         await chat
 
 
+# asyncio.run(main())
