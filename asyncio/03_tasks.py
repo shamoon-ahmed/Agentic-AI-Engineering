@@ -3,6 +3,7 @@
 
 import asyncio
 import time
+from turtle import down
 
 async def download(url): # coroutine
     print(f"Download started for {url}...")
@@ -28,7 +29,7 @@ async def main():
     elapsed = time.time() - start
     print(elapsed)
 
-asyncio.run(main())
+# asyncio.run(main())
 
 ''' 
 what happens here:
@@ -55,3 +56,38 @@ comes to other coroutine
 
 '''
 
+# what if we await the task2 first and then task1
+
+async def main2():
+
+    task1 = asyncio.create_task(download("site1"))
+    task2 = asyncio.create_task(download("site2"))
+
+    result1 = await task2
+    print(f"{result1}, Task2 completed")
+
+    result2 = await task1
+    print(f"{result2}, Task1 completed")
+
+asyncio.run(main2())
+
+'''
+notice, this is the output:
+
+Download started for site1...
+Download started for site2...
+Download finished for site1!
+Download finished for site2!
+None, Task2 completed
+None, Task1 completed
+
+even tho we awaited task2 first, the download started from site1, then site2, finished for site1 then site2
+but at the end Task2 completed printed then Task1
+
+the reason is, await doesnt guarantee the execution of the awaited statement at that exact moment
+the event loop just executes whichever job is ready and as event loop follow FIFO method,
+the first task scheduled (task1) was executed first
+but as task2 was awaited first, the event loop waited until task2 was completed
+once it was completed, it printed Task2 completed then Task1 completed printed
+
+'''
