@@ -30,7 +30,7 @@
         
         System prompts, few-shot examples, chain-of-thought, ReAct prompting, structured output (JSON mode). These are job interview topics.
         
-    - [ ]  **Environment management — .env files, python-dotenv, virtual envs**
+    - [x]  **Environment management — .env files, python-dotenv, virtual envs**
         
         Never hardcode API keys. Every job expects this. Use python-dotenv and .gitignore from day one.
         
