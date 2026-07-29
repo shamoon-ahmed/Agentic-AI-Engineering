@@ -17,7 +17,7 @@ config = types.GenerateContentConfig(
 client = genai.Client()
 
 response = client.models.generate_content(
-    model="gemini-3.5-flash",
+    model="gemini-3.1-flash-lite",
     contents="whats the weather in islamabad?",
     config=config
 )
