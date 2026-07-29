@@ -15,6 +15,9 @@ chat = client.chats.create(model="gemini-3.1-flash-lite")
 def chatting(user_input: str):
     response = chat.send_message(user_input)
 
+    # or stream response
+    # response = chat.send_message_stream(user_input)
+
     print("AI: ", response.text)
 
 while True:
