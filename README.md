@@ -26,7 +26,7 @@
         
         Using the raw API first teaches you what LangChain is actually abstracting. Build a simple chat loop, pass message history, handle streaming responses.
         
-    - [ ]  **Prompt engineering fundamentals**
+    - [x]  **Prompt engineering fundamentals** (July, 30, 2026)
         
         System prompts, few-shot examples, chain-of-thought, ReAct prompting, structured output (JSON mode). These are job interview topics.
         
