@@ -11,3 +11,6 @@ wheels/
 
 # Secret keys
 .env
+
+# personal files
+chat_history.json

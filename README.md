@@ -10,7 +10,7 @@
 
 ### 🤖 Phase 1 — Python fluency + LLM API (Weeks 1–2)
 
-- [ ]  **Complete Phase 1**
+- [x]  **Complete Phase 1**
 - **📅 Weeks:** 1–2 — *Python for AI + calling your first LLM API*
 - **⏱️ Time:** ~2 weeks
 - **📚 Learn (check off):**
