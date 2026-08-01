@@ -8,7 +8,7 @@
 
 ## Roadmap milestones (6 phases)
 
-### 🤖 Phase 1 — Python fluency + LLM API (Weeks 1–2)
+### 🤖 Phase 1 — Python fluency + LLM API (Weeks 1–2) (Completed on August, 1, 2026)
 
 - [x]  **Complete Phase 1**
 - **📅 Weeks:** 1–2 — *Python for AI + calling your first LLM API*
@@ -45,7 +45,7 @@
     - python-dotenv
     - Pydantic
     - async/await
-- **🛠️ Mini-project: CLI chatbot with memory**
+- **🛠️ Mini-project: CLI chatbot with memory** (August, 1, 2026)
     
     A command-line chatbot that maintains conversation history, uses a system prompt you wrote, and responds in a structured JSON format. Deploy it to GitHub. This is your first portfolio piece.
     
