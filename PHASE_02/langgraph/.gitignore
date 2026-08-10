@@ -1,0 +1,7 @@
+.venv/
+.env
+**/.langgraph_api/
+.ipynb_checkpoints/
+*.egg-info/
+# practice files
+practice.ipynb
