@@ -208,3 +208,8 @@ __marimo__/
 
 # LangSmith Studio
 **/.langgraph_api/
+
+# practice files
+practice.ipynb
+
+remote_mcp_server.py
