@@ -32,6 +32,7 @@ builder.add_conditional_edges(
     # If the latest message (result) from assistant is a not a tool call -> tools_condition routes to END
     tools_condition,
 )
+builder.add_edge("tools", "tool_calling_llm")
 builder.add_edge("tools", END)
 
 # Compile graph
