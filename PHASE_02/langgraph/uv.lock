@@ -1190,6 +1190,11 @@ dependencies = [
     { name = "wikipedia" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "ipykernel" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "aiohttp", specifier = ">=3.13.4" },
@@ -1211,6 +1216,9 @@ requires-dist = [
     { name = "trustcall" },
     { name = "wikipedia" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ipykernel", specifier = ">=7.3.0" }]
 
 [[package]]
 name = "langchain-classic"
