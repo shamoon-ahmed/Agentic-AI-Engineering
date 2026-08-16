@@ -3,6 +3,9 @@ from langchain_openai import ChatOpenAI
 
 from langgraph.graph import START, StateGraph, MessagesState
 from langgraph.prebuilt import tools_condition, ToolNode
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def add(a: int, b: int) -> int:
     """Adds a and b.
@@ -58,4 +61,4 @@ builder.add_conditional_edges(
 builder.add_edge("tools", "assistant")
 
 # Compile graph
-graph = builder.compile()
+graph = builder.compile(interrupt_before=["tools"])
