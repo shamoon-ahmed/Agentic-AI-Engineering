@@ -103,7 +103,7 @@ def ask_question(state: ExpertInterviewState):
     prompt = question_instructions.format(persona=analyst.persona)
     llm_output = llm.invoke([SystemMessage(content=prompt)]+messages)
 
-    return {"messages": llm_output}
+    return {"messages": [llm_output]} # output should be a list
 
 
 search_instructions = """You will be given a conversation between an analyst and an expert.
