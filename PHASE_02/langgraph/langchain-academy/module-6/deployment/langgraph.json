@@ -1,10 +1,19 @@
 {
-    "dockerfile_lines": [],
-    "graphs": {
-      "task_maistro": "./task_maistro.py:graph"
-    },
-    "python_version": "3.11",
-    "dependencies": [
-      "."
-    ]
-  }
+  "dockerfile_lines": [],
+  "graphs": {
+    "research_graph": "./research_graph.py:research_graph"
+  },
+  "python_version": "3.11",
+  "dependencies": [
+    ".",
+    "langchain",
+    "langchain-core>=1.2.28",
+    "langchain-community",
+    "langchain-openai>=1.1.14",
+    "langchain-tavily",
+    "wikipedia",
+    "trustcall",
+    "python-dotenv",
+    "typing-extensions"
+  ]
+}

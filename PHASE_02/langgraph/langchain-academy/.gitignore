@@ -225,3 +225,5 @@ module-6/deployment/docker-compose.yml
 practice.ipynb
 
 .env
+
+docker-compose.yml
