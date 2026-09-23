@@ -1,5 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Path
 from enum import Enum
+from typing import Annotated
 
 app = FastAPI()
 
@@ -25,7 +26,7 @@ async def get_user2(user_id: str):
     return {"user":f"User{user_id}"}
 
 @app.get("/items/{item_id}")
-async def get_item(item_id: int):
+async def get_item(item_id: Annotated[str, Path(min_length=5)]):
     return {"Item": f"Your item ID is: {item_id}"}
 
 # --------------------------------------------------
