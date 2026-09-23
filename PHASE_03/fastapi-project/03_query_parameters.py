@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
+from typing import Annotated
 
 app = FastAPI()
 
@@ -37,3 +38,19 @@ def read_item(user_id: str, item_id: str, q: str | None = None, short: bool = Fa
 # if we pass: no, No, false, 0, False, Off, off...they all evalues to False
 
 # also we can pass a required query parameter without passing a default value to it
+
+# ---------------------------------------
+
+# to add some metadata, constraints to our query parameter in path operation function parameters,
+# we can use Query with Annotated. Using Annotated alongside Query is the new way to work with Query parameters
+# here q is an optional parameter cuz we said None
+
+@app.get("/items")
+def read_items(
+    item_id: str, 
+    q: Annotated[str | None, Query(max_length=50, min_length=5)] = None # see how we used Annotated with Query with metadata
+    ):
+    if q:
+        return {"item_id":item_id, "q":q}
+    
+    return {"item_id":item_id}
